@@ -1,0 +1,44 @@
+{% load static %}
+
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'css/insta.css' %}">
+	<title></title>
+</head>
+<body>
+	<header>
+		<div class="navigation">
+			<div>
+				<a href="/"><i class="fa fa-instagram"></i></a>
+				<a class="vl" href="/"></a>
+				<a href="/">Instagram</a>
+			</div>
+			<div>
+				<input type="text" placeholder="Search">
+				<a class="search" href=""><i class="fa fa-search"></i></a>
+			</div>
+			<div>
+				<a class="add" href="/new/" id="new"><i class="fa fa-plus"></i></a>
+				<a class="profile" href=""><i class="fa fa-user"></i></a>
+				<a class="logout" href="/"><i class="fa fa-power-off"></i></a>
+			</div>
+	</header>
+	<div class="content_container">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	<script>
+        $(function () {
+         
+            $('#new').click(function() {
+                window.location.href = '/new/';
+            });
+            
+
+        });
+        
+    </script>
+</body>
+</html>
